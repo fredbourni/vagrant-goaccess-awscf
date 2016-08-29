@@ -17,7 +17,9 @@ Vagrant.configure(2) do |config|
 
    config.vm.provision "shell", inline: $prepare
 
-   config.vm.network "forwarded_port", guest: 80, host: 8888
+   config.vm.network "forwarded_port", guest: 80, host: 80
+
+   config.vm.synced_folder ".", "/vagrant", type: "virtualbox"
 
    config.vm.provider "virtualbox" do |v|
      v.name   = "goaccess"
