@@ -9,10 +9,13 @@ make
 make install
 curl -s https://bootstrap.pypa.io/get-pip.py | python3
 pip install awscli
+wget -N -q http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz
+gunzip GeoLiteCity.dat.gz
+mv GeoLiteCity.dat /usr/local/share/GeoIP/
+apt-get -y install nginx
 BASH
 
 Vagrant.configure(2) do |config|
-   config.vm.box = "ubuntu/xenial64"
    config.vm.box = "ubuntu/trusty64"
 
    config.vm.provision "shell", inline: $prepare
