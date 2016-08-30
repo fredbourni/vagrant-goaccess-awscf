@@ -1,0 +1,50 @@
+13c13
+< #time-format %H:%M:%S
+---
+> time-format %H:%M:%S
+42c42
+< #date-format %Y-%m-%d
+---
+> date-format %Y-%m-%d
+85a86
+> log-format %d\t%t\t%^\t%b\t%^\t%m\t%^\t%r\t%s\t%R\t%u\t%^\t%^\t%^\t%^\t%^\t%^\t%^\t%T\t%h\t%^
+115c116
+< #log-format CLOUDFRONT
+---
+> log-format CLOUDFRONT
+245c246
+< #addr 0.0.0.0
+---
+> addr 127.0.0.1
+260c261
+< #real-time-html true
+---
+> real-time-html true
+275c276
+< #ws-url goaccess.io
+---
+> ws-url 127.0.0.1
+310c311
+< agent-list false
+---
+> agent-list true
+314c315
+< with-output-resolver false
+---
+> with-output-resolver true
+372c373
+< all-static-files false
+---
+> all-static-files true
+422c423
+< ignore-panel REFERRERS
+---
+> #ignore-panel REFERRERS
+424c425
+< ignore-panel KEYPHRASES
+---
+> #ignore-panel KEYPHRASES
+576c577
+< #geoip-database /usr/local/share/GeoIP/GeoLiteCity.dat
+---
+> geoip-database /usr/share/GeoIP/GeoIP.dat

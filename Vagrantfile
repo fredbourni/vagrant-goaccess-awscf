@@ -7,12 +7,14 @@ apt-get install -y build-essential autoconf libgeoip-dev libncursesw5-dev
 ./configure --enable-geoip --enable-utf8
 make
 make install
+patch /usr/local/etc/goaccess.conf /vagrant/goaccess/cloudfront.diff
 curl -s https://bootstrap.pypa.io/get-pip.py | python3
 pip install awscli
 wget -N -q http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz
 gunzip GeoLiteCity.dat.gz
 mv GeoLiteCity.dat /usr/local/share/GeoIP/
 apt-get -y install nginx
+chown -R vagrant:vagrant /usr/share/nginx/html/
 BASH
 
 Vagrant.configure(2) do |config|
