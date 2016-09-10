@@ -1,5 +1,5 @@
 # vagrant-goaccess-awscf
-Vagrant box for parsing and analysing AWS CloudFront log using GoAccess
+Vagrant box for parsing and analysing AWS CloudFront logs using GoAccess
 
 ## Dependencies
 
@@ -23,17 +23,17 @@ vagrant up
 
 - Use [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) or any other SSH client using `127.0.0.1` port `2222` using `vagrant` as username and password.
 
-**Fetch logs file from Amazon**
+**Fetch your logs file from Amazon S3**
 
 ```bash
 # Configure the AWS Command Line Interface with your API credential
 aws configure
-# Let's go in the shared folder
+# Let's switch to the pre-shared vagrant folder
 cd /vagrant
 # Be clean and create a 'logs' folder
 mkdir logs
 cd logs
-# Sync the log files in the 'logs' directory
+# Sync the log files in that directory
 aws s3 sync s3://bucket-having-cloudfront-logs/ ./
 ```
 
@@ -47,7 +47,7 @@ This will create an HTML report available at: [http://127.0.0.1/](http://127.0.0
 
 ## GoAccess configuration
 
-- The default configuration is being patch by [goaccess/cloudfront.diff!](goaccess/cloudfront.diff)
+- The default configuration is being patch by [goaccess/cloudfront.diff](goaccess/cloudfront.diff)
 - To tweak the configuration at your taste, please edit: /usr/local/etc/goaccess.conf
 
 ## Documentation
