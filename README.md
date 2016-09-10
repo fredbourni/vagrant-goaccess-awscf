@@ -23,7 +23,7 @@ vagrant up
 
 - Use [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) or any other SSH client using `127.0.0.1` port `2222` using `vagrant` as username and password.
 
-**Fetch your logs file from Amazon S3**
+**Fetch your log files from Amazon S3**
 
 ```bash
 # Configure the AWS Command Line Interface with your API credential
