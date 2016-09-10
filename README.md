@@ -40,7 +40,7 @@ aws s3 sync s3://bucket-having-cloudfront-logs/ ./
 **Generate your first report**
 
 ```bash
-zcat /vagrant/logs/yoursite-prefix.com/*.gz | goaccess -o /usr/share/nginx/html/index.html
+zcat /vagrant/logs/yoursite-prefix/*.gz | goaccess -o /usr/share/nginx/html/index.html
 ```
 
 This will create an HTML report available at: [http://127.0.0.1/](http://127.0.0.1/)
